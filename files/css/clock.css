@@ -1,0 +1,106 @@
+:root{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a4;
+  --radius:12px;
+  --shadow: 0 6px 18px rgba(2,6,23,0.06);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#0f172a;
+  padding:2rem;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.clock-app{
+  max-width:960px;
+  margin:0 auto;
+}
+
+h1{
+  margin:0 0 1rem 0;
+  font-size:1.5rem;
+}
+
+/* Controls */
+.controls{margin-bottom:1rem}
+.controls-row{
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+  flex-wrap:wrap;
+}
+select#tz-select{
+  padding:.5rem .6rem;
+  border-radius:8px;
+  border:1px solid #e6eef2;
+  min-width:220px;
+}
+.btn{
+  background:var(--accent);
+  color:white;
+  border:0;
+  padding:.5rem .8rem;
+  border-radius:8px;
+  cursor:pointer;
+}
+.toggle{display:flex;align-items:center;gap:.4rem;margin-left:1rem}
+.toggle-label{font-size:.9rem;color:var(--muted)}
+
+/* Zones grid */
+.zones{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+
+/* Card */
+.zone-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:1rem;
+  box-shadow:var(--shadow);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  min-height:110px;
+}
+.zone-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.5rem;
+}
+.zone-title{font-weight:600;font-size:1rem}
+.zone-sub{color:var(--muted);font-size:.875rem}
+.time{font-size:1.4rem;font-weight:700}
+.seconds{font-weight:400;color:var(--muted);font-size:.9rem;margin-left:.45rem}
+.tz-name{font-size:.85rem;color:var(--muted)}
+
+/* Buttons on card */
+.card-actions{
+  display:flex;
+  gap:.4rem;
+  margin-top:auto;
+}
+.icon-btn{
+  background:transparent;border:0;color:var(--muted);cursor:pointer;padding:.35rem;border-radius:6px;
+}
+.icon-btn:hover{background:#f1f5f9;color:#111827}
+
+/* small note */
+.hint{color:var(--muted);font-size:.9rem;margin-top:1rem}
+
+/* Responsive */
+@media (max-width:520px){
+  .controls-row{flex-direction:column;align-items:stretch}
+  select#tz-select{width:100%}
+}

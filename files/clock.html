@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>World Clock — Multiple Time Zones</title>
+  <link rel="stylesheet" href="css/clock.css">
+</head>
+<body>
+  <main class="clock-app">
+    <h1>World Clock</h1>
+
+    <section class="controls" aria-label="Clock controls">
+      <label for="tz-select">Add a time zone:</label>
+      <div class="controls-row">
+        <select id="tz-select" aria-label="Time zone select"></select>
+        <button id="add-tz" class="btn">Add</button>
+
+        <label class="toggle">
+          <input id="hour-toggle" type="checkbox" />
+          <span class="toggle-label">24-hour</span>
+        </label>
+      </div>
+    </section>
+
+    <section id="zones" class="zones" aria-live="polite" aria-label="Selected time zones">
+      <!-- Time zone cards appended here -->
+    </section>
+
+    <p class="hint">Tip: You can drag & drop cards to reorder (on modern browsers).</p>
+  </main>
+
+  <script src="js/clock.js" defer></script>
+</body>
+</html>
